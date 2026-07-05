@@ -2,9 +2,7 @@
 
 Inspect Python debug variables as images, tables, and grids — directly inside VS Code, without writing a single line of display code.
 
-<video src="https://github.com/ariharasudhanm/cv-variable-preview/releases/download/v0.2.0/demo.mp4" width="100%" controls>
-  <a href="https://github.com/ariharasudhanm/cv-variable-preview/releases/download/v0.2.0/demo.mp4">▶ Watch demo</a>
-</video>
+▶ **[Watch demo video](https://github.com/ariharasudhanm/cv-variable-preview/releases/download/v0.2.0/demo.mp4)**
 
 
 
