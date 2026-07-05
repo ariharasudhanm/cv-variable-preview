@@ -4,6 +4,10 @@ Inspect Python debug variables as images, tables, and grids — directly inside 
 
 Hover over a variable name to see a thumbnail. Right-click a variable in the **Variables** or **Watch** panel to open a full zoomable preview. Turn on **Live** mode and the panel auto-refreshes as you step through your code.
 
+<video src="demo.mp4" width="100%" controls>
+  <a href="demo.mp4">Watch demo</a>
+</video>
+
 ---
 
 ## Features
