@@ -2,9 +2,12 @@
 
 Inspect Python debug variables as images, tables, and grids — directly inside VS Code, without writing a single line of display code.
 
-![CV Variable Preview screenshot](https://github.com/user-attachments/assets/19058155-ccf2-4d8e-af3d-ad005448a020)
 
 https://github.com/user-attachments/assets/9d512b56-79f9-4bd3-9373-ba1daf8561ee
+
+![CV Variable Preview screenshot](https://github.com/user-attachments/assets/19058155-ccf2-4d8e-af3d-ad005448a020)
+
+
 
 
 Hover over a variable name to see a thumbnail. Right-click a variable in the **Variables** or **Watch** panel to open a full zoomable preview. Turn on **Live** mode and the panel auto-refreshes as you step through your code.
