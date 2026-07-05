@@ -97,6 +97,8 @@ The panel opens beside your editor. For OpenCV arrays, choose **BGR / BGRA** whe
 
 Hover over a variable name in the source file while the debugger is paused. A thumbnail and metadata appear after a short delay. Click **Open Preview ▸** in the tooltip to open the full panel.
 
+> **Tip:** If the tooltip doesn't appear or disappears too quickly, hold **Alt** while hovering to force it to stay visible. You can also use the keyboard shortcut **`Ctrl+K Ctrl+I`** (`Cmd+K Cmd+I` on macOS) to show the hover info for the word under the cursor without using the mouse.
+
 ### Compare variables
 
 **Option A — from the Variables panel (recommended):**
@@ -168,6 +170,37 @@ The samples are in `samples/`:
 | `python_numpy_debug.py` | Basic numpy arrays and live-refresh stepping |
 | `python_real_images_debug.py` | Real scikit-image photos (coins, moon, camera…) |
 | `python_advanced_types_debug.py` | pandas, batch arrays, torch tensors |
+
+### Publishing a GitHub release
+
+Users can install the extension directly from a GitHub release without cloning the repo. To publish one:
+
+1. **Tag the commit** and push the tag:
+
+   ```bash
+   git tag v0.2.0
+   git push origin main --tags
+   ```
+
+2. **Build the installable VSIX:**
+
+   ```bash
+   npm run package
+   # produces cv-variable-preview-0.2.0.vsix
+   ```
+
+3. **Create the release on GitHub:**
+   - Go to your repository → **Releases** → **Draft a new release**
+   - Under *Choose a tag*, select the tag you just pushed (`v0.2.0`)
+   - Set the release title, e.g. `v0.2.0`
+   - Drag the `.vsix` file into the **Assets** section
+   - Click **Publish release**
+
+Users can then download the `.vsix` from the Assets section and install it with:
+
+```bash
+code --install-extension cv-variable-preview-0.2.0.vsix
+```
 
 ---
 
