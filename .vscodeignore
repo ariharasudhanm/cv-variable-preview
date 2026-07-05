@@ -1,0 +1,10 @@
+.vscode/**
+.vscode-test/**
+node_modules/**
+src/**
+samples/**
+.gitignore
+.vscodeignore
+tsconfig.json
+*.vsix
+npm-debug.log*

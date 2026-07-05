@@ -1,0 +1,164 @@
+{
+  "name": "cv-variable-preview",
+  "displayName": "CV Variable Preview",
+  "description": "Inspect Python debug variables as images, tables, and grids — zoom, pan, histogram, compare, and live-refresh while stepping.",
+  "version": "0.2.0",
+  "publisher": "ariharasudhanm",
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ariharasudhanm/cv-variable-preview"
+  },
+  "keywords": [
+    "python",
+    "debug",
+    "image",
+    "numpy",
+    "opencv",
+    "computer vision",
+    "visualization",
+    "pytorch",
+    "pandas"
+  ],
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Debuggers",
+    "Visualization"
+  ],
+  "files": [
+    "out",
+    "images",
+    "README.md",
+    "package.json"
+  ],
+  "activationEvents": [
+    "onLanguage:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cvPreview.previewVariable",
+        "title": "CV Preview: Preview Variable as Image",
+        "category": "CV Preview"
+      },
+      {
+        "command": "cvPreview.previewVariableFromContext",
+        "title": "CV Preview: Preview as Image",
+        "category": "CV Preview"
+      },
+      {
+        "command": "cvPreview.toggleLiveRefresh",
+        "title": "CV Preview: Toggle Live Refresh",
+        "category": "CV Preview"
+      },
+      {
+        "command": "cvPreview.addToCompareFromContext",
+        "title": "CV Preview: Add to Compare",
+        "category": "CV Preview"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "cvPreview.previewVariable"
+        },
+        {
+          "command": "cvPreview.previewVariableFromContext",
+          "when": "false"
+        },
+        {
+          "command": "cvPreview.addToCompareFromContext",
+          "when": "false"
+        },
+        {
+          "command": "cvPreview.toggleLiveRefresh"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "cvPreview.previewVariable",
+          "when": "debugState == 'stopped'",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "cvPreview.previewVariable",
+          "when": "debugState == 'stopped'",
+          "group": "navigation"
+        }
+      ],
+      "debug/callstack/context": [
+        {
+          "command": "cvPreview.previewVariable",
+          "when": "debugState == 'stopped'",
+          "group": "navigation"
+        }
+      ],
+      "debug/variables/context": [
+        {
+          "command": "cvPreview.previewVariableFromContext",
+          "when": "debugState == 'stopped'",
+          "group": "navigation"
+        },
+        {
+          "command": "cvPreview.addToCompareFromContext",
+          "when": "debugState == 'stopped'",
+          "group": "navigation"
+        }
+      ],
+      "debug/watch/context": [
+        {
+          "command": "cvPreview.previewVariableFromContext",
+          "when": "debugState == 'stopped'",
+          "group": "navigation"
+        },
+        {
+          "command": "cvPreview.addToCompareFromContext",
+          "when": "debugState == 'stopped'",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "CV Variable Preview",
+      "properties": {
+        "cvPreview.defaultExpression": {
+          "type": "string",
+          "default": "img",
+          "description": "Default expression used when previewing a Python debug variable."
+        },
+        "cvPreview.channelOrder": {
+          "type": "string",
+          "enum": [
+            "RGB",
+            "BGR"
+          ],
+          "default": "RGB",
+          "description": "Channel order to use for 3-channel and 4-channel arrays."
+        },
+        "cvPreview.enableHoverPreview": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show an inline image/table thumbnail when hovering a previewable Python variable while paused in the debugger."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "package": "node scripts/package-vsix.js",
+    "install:main": "npm run package && code --uninstall-extension local-dev.cv-variable-preview && code --install-extension cv-variable-preview-0.2.0.vsix --force",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "20.11.30",
+    "@types/vscode": "1.90.0",
+    "typescript": "5.4.5"
+  }
+}

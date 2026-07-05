@@ -1,0 +1,29 @@
+# compiled output
+out/
+
+# dependencies
+node_modules/
+
+# VS Code extension build artefacts
+.vsix-build/
+*.vsix
+
+# VS Code test runner
+.vscode-test/
+
+# user-specific editor settings (project settings in launch.json / tasks.json are tracked)
+.vscode/settings.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# agent / AI tool internals
+.agents/
+.claude/
+.codex/
+
+# logs
+npm-debug.log*
